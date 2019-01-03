@@ -1,0 +1,6 @@
+module_one.index:
+  path: '/index'
+  defaults:
+    _controller: 'Drupal\module_one\Controller\ModuleOne::index'
+  requirements:
+    _permission: 'access content'

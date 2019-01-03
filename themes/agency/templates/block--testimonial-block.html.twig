@@ -1,0 +1,49 @@
+{% extends "block.html.twig" %}
+
+{% set attributes = attributes.addClass('testimonial-block') %}
+{% block content %}
+    <!-- Testimonial -->
+<div id="testimonial" class="section md-padding">
+
+    <!-- Background Image -->
+    <div class="bg-img" style="background-image: url('{{ bg_image_url.url }}')">
+        <div class="overlay"></div>
+    </div>
+    <!-- /Background Image -->
+
+    <!-- Container -->
+    <div class="container">
+
+        <!-- Row -->
+        <div class="row">
+
+            <!-- Testimonial slider -->
+            <div class="col-md-10 col-md-offset-1">
+                <div id="testimonial-slider" class="owl-carousel owl-theme">
+                    <!-- testimonial -->
+                    {% if persons %}
+                        {% for person in persons %}
+                            <div class="testimonial">
+                                <div class="testimonial-meta">
+                                    <img src="{{ person.url }}" alt="{{ person.alt }}">
+                                    <h3 class="white-text">{{ person.name }}</h3>
+                                    <span>{{ person.job }}</span>
+                                </div>
+                                <p class="white-text">{{ person.testimonial }}</p>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    <!-- /testimonial -->
+                </div>
+            </div>
+            <!-- /Testimonial slider -->
+
+        </div>
+        <!-- /Row -->
+
+    </div>
+    <!-- /Container -->
+
+</div>
+<!-- /Testimonial -->
+{% endblock %}

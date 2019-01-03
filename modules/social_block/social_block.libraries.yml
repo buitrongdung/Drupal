@@ -1,0 +1,5 @@
+social_block:
+  version: VERSION
+  css:
+    theme:
+      css/social_block.css: {}

@@ -1,0 +1,5 @@
+about_block:
+  version: VERSION
+  css:
+    theme:
+      css/about_block.css: {}

@@ -1,0 +1,44 @@
+{% extends "block.html.twig" %}
+
+{% set attributes = attributes.addClass('home-content') %}
+{% block content %}
+
+    <!-- Portfolio -->
+    <div id="portfolio" class="section md-padding bg-grey">
+
+        <!-- Container -->
+        <div class="container">
+
+            <!-- Row -->
+            <div class="row">
+
+                <!-- Section header -->
+                <div class="section-header text-center">
+                    <h2 class="title">{{ 'Featured Works'|t }}</h2>
+                </div>
+                <!-- /Section header -->
+                    {% for cate in cates %}
+                        <!-- Work -->
+                        <div class="col-md-4 col-xs-6 work">
+                            <img class="img-responsive" src="{{ cate.image }}" alt="">
+                            <div class="overlay"></div>
+                            <div class="work-content">
+                                <span>{{ cate.name }}</span>
+                                <h3>{{ cate.desc|striptags }}</h3>
+                                <div class="work-link">
+                                    <a href="{{ cate.url }}"><i class="fa fa-external-link"></i></a>
+                                    <a class="lightbox" href="{{ cate.image }}"><i class="fa fa-search"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Work -->
+                    {% endfor %}
+            </div>
+            <!-- /Row -->
+
+        </div>
+        <!-- /Container -->
+
+    </div>
+    <!-- /Portfolio -->
+{% endblock %}

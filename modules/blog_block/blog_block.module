@@ -1,0 +1,27 @@
+<?php
+function blog_block_theme()
+{
+    return array_merge(drupal_common_theme(), [
+        'block__blog_block' => [
+            'render element' => 'elements',
+            'base hook' => 'block',
+        ],
+    ]);
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block templates.
+ */
+function blog_block_preprocess_block(&$variables)
+{
+    $variables['article_inf'] = '';
+    if ($variables['content']['article_inf']['#access'] && $variables['content']['article_inf']['#markup']) {
+        $variables['article_inf'] = $variables['content']['article_inf']['#markup'];
+    }
+
+    $variables['article_limit'] = '';
+    if ($variables['content']['article_limit']['#access'] && $variables['content']['article_limit']['#markup']) {
+        $variables['article_limit'] = $variables['content']['article_limit']['#markup'];
+    }
+}
+

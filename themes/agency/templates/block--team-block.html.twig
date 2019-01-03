@@ -1,0 +1,46 @@
+{% extends "block.html.twig" %}
+
+{% set attributes = attributes.addClass('team_-block') %}
+{% block content %}
+    <!-- Team -->
+<div id="team" class="section md-padding">
+    <!-- Container -->
+    <div class="container">
+        <!-- Row -->
+        <div class="row">
+            <!-- Section header -->
+            <div class="section-header text-center">
+                <h2 class="title">{{ 'Our Team'|t }}</h2>
+            </div>
+            <!-- /Section header -->
+            {%  if teams %}
+                {% for team in teams %}
+                    <!-- team -->
+                    <div class="col-sm-4">
+                        <div class="team">
+                            <div class="team-img">
+                                <img class="img-responsive" src="{{ team.image }}" alt="">
+                                <div class="overlay">
+                                    <div class="team-social">
+                                        <a href="{{ team.facebook }}"><i class="fa fa-facebook"></i></a>
+                                        <a href="{{ team.google }}"><i class="fa fa-google-plus"></i></a>
+                                        <a href="{{ team.twitter }}"><i class="fa fa-twitter"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <h3>{{ team.name }}</h3>
+                                <span>{{ team.desc|striptags }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /team -->
+                {% endfor %}
+            {% endif %}
+        </div>
+        <!-- /Row -->
+    </div>
+    <!-- /Container -->
+</div>
+<!-- /Team -->
+{% endblock %}

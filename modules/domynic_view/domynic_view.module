@@ -1,0 +1,97 @@
+<?php
+/**
+* @file
+* Contains domynic_view.module.
+*/
+
+//use Drupal\Core\Routing\RouteMatchInterface;
+//use Drupal\Core\Template\Attribute;
+
+/**
+ * Implements hook_help().
+ */
+//function domynic_view_help ($route_name, RouteMatchInterface $route_match)
+//{
+//    switch ($route_name) {
+//        case 'help.page.domynic_view':
+//            $output = '';
+//            $output .= '<h3>' . t('About') . '</h3>';
+//            $output .= '<p>' . t('Provides a views style plugin to display views results in jQuery UI Tabs.') . '</p>';
+//            return $output;
+//        default:
+//    }
+//}
+
+/**
+ * * Prepares variables for Views HTML list templates.
+ *
+ * @param array $variables
+ * An associative array containing:
+ * - view: A View object.
+ */
+//function template_preprocess_domynic_view_format(&$variables)
+//{
+//    $handler = $variables['view']->style_plugin;
+//    $view = $variables['view'];
+//    $rows = $variables['rows'];
+//    $style = $view->style_plugin;
+//    $fields = &$view->field;
+//    $options= $style->options;
+//
+//    $variables['view']->element['#attached']['library'] = 'core/jquery.ui.tabs';
+//    $variables['view']->element['#attached']['library'] = 'core/jquery';
+//    $variables['view']->element['#attached']['library'] = 'domynic_view/domynic_view';
+//
+//    if ($options) {
+//        $first_group_field = $options['group'];
+//    }
+//
+//    $variables['attributes'] = new Attribute(['id' => 'tabs']);
+//    $fields = &$view->field;
+//    $variables['default_row_class'] = !empty($options['default_row_class']);
+//
+//    foreach ($rows as $id => $row) {
+//        $field_output = $handler->getField($id, $first_group_field);
+//        $variables['rows']['group'][] = $field_output;
+//        $variables['rows'][$id] = array();
+//        $variables['rows'][$id]['content'] = $row;
+//        $variables['rows'][$id]['attributes'] = new Attribute();
+//        if ($row_class = $view->style_plugin->getRowClass($id)) {
+//            $variables['rows'][$id]['attributes']
+//                ->addClass($row_class);
+//        }
+//
+//    }
+//
+//}
+
+function domynic_view_theme()
+{
+
+}
+
+/**
+ * Implements template_preprocess_HOOK().
+ */
+function template_preprocess_domynic_view_area (&$variables)
+{
+    var_dump($variables);exit;
+}
+
+/**
+ * Implements hook_preprocess_views_view_field().
+ */
+function domynic_view_preprocess_views_view_field (&$variables)
+{
+    $field = $variables['field'];
+    if ($field->field == 'domynic_view_content') {
+        $result = $field->options['domynic_view_content'];
+        $variables['output'] = Drupal\Core\Render\Markup::create($result);
+    }
+
+    if ($field->field == 'domynic_view_area') {
+        $result = $field->options['domynic_view_area'];
+        $variables['output'] = Drupal\Core\Render\Markup::create($result);
+    }
+}
+

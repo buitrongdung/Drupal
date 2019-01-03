@@ -1,0 +1,5 @@
+home_content:
+  version: VERSION
+  css:
+    theme:
+      css/home_content.css: {}

@@ -1,0 +1,51 @@
+{% extends "block.html.twig" %}
+
+{% set attributes = attributes.addClass('why-choose-us') %}
+{% block content %}
+
+    <!-- Why Choose Us -->
+<div id="features" class="section md-padding bg-grey">
+
+    <!-- Container -->
+    <div class="container">
+
+        <!-- Row -->
+        <div class="row">
+
+            <!-- why choose us content -->
+            <div class="col-md-6">
+                <div class="section-header">
+                    <h2 class="title">{{ 'Why Choose Us'|t }}</h2>
+                </div>
+                <p>{{ text }}</p>
+                {% if items %}
+                    {% for item in items %}
+                        <div class="feature">
+                            <i class="fa fa-check"></i>
+                            <p>{{ item }}</p>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <!-- /why choose us content -->
+            <!-- About slider -->
+            <div class="col-md-6">
+                <div id="about-slider" class="owl-carousel owl-theme">
+                    {% if images %}
+                        {% for image in images %}
+                            <img class="img-responsive" src="{{ image.url }}" alt="{{ image.alt  }}">
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+            <!-- /About slider -->
+
+        </div>
+        <!-- /Row -->
+
+    </div>
+    <!-- /Container -->
+
+</div>
+<!-- /Why Choose Us -->
+{% endblock %}

@@ -1,0 +1,7 @@
+name: Service Block
+description: 'Custom service block'
+type: module
+core: 8.x
+package: Custom
+dependencies:
+  - block

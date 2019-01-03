@@ -1,0 +1,5 @@
+services:
+  taxonomy_import.event_subscriber:
+    class: 'Drupal\taxonomy_import\EventSubscriber\EventSubscriber'
+    tags:
+      - {name: event_subscriber}

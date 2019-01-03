@@ -1,0 +1,12 @@
+name: Why Choose Us Block
+description: 'Why Choose Us block'
+type: module
+core: 8.x
+libraries:
+  - why_choose_us_block/dropzone
+  - why_choose_us_block/dropzone-amd-module
+  - why_choose_us_block/why-choose
+  - why_choose_us_block/basic
+package: Custom
+dependencies:
+  - block

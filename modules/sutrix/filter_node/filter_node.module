@@ -1,0 +1,8 @@
+<?php
+
+function filter_node_preprocess_block(&$variables)
+{
+    if ($variables['plugin_id'] == 'filter_node_block') {
+        $variables['attributes']['role'] = 'filter';
+    }
+}

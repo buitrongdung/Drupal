@@ -1,0 +1,10 @@
+portfolio:
+  version: VERSION
+  css:
+    theme:
+      css/portfolio.css: {}
+  js:
+    js/portfolio.js: {}
+manage:
+  js:
+    js/manage.js: {}

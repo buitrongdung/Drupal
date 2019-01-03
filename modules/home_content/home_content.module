@@ -1,0 +1,37 @@
+<?php
+function home_content_theme()
+{
+    return array_merge(drupal_common_theme(), [
+        'block__home_content' => [
+            'render element' => 'elements',
+            'base hook' => 'block',
+        ],
+    ]);
+}
+
+/**
+* Implements hook_preprocess_HOOK() for block templates.
+ */
+function home_content_preprocess_block(&$variables)
+{
+    $variables['site_title'] = '';
+    if ($variables['content']['site_title']['#access'] && $variables['content']['site_title']['#markup']) {
+        $variables['site_title'] = $variables['content']['site_title']['#markup'];
+    }
+
+    $variables['site_summary'] = '';
+    if ($variables['content']['site_summary']['#access'] && $variables['content']['site_summary']['#markup']) {
+        $variables['site_summary'] = $variables['content']['site_summary']['#markup'];
+    }
+
+    $variables['site_url'] = '';
+    if ($variables['content']['site_url']['#access'] && $variables['content']['site_url']['#markup']) {
+        $variables['site_url'] = $variables['content']['site_url']['#markup'];
+    }
+}
+
+function home_content_preprocess_block__home_content(&$variables)
+{
+    $variables['#attached']['library'][] = 'home_content/home_content';
+
+}

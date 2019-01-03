@@ -1,0 +1,20 @@
+global-styling:
+  version: VERSION
+  css:
+    theme:
+      '//fonts.googleapis.com/css?family=Varela+Round': {}
+      css/bootstrap.min.css: {}
+      css/owl.carousel.css: {}
+      css/owl.theme.default.css: {}
+      css/magnific-popup.css: {}
+      css/font-awesome.min.css: {}
+      css/style.css: {}
+
+global-scripts:
+  version: VERSION
+  js:
+    js/jquery.min.js: {}
+    js/bootstrap.min.js: {}
+    js/owl.carousel.min.js: {}
+    js/jquery.magnific-popup.js: {}
+    js/main.js: {}

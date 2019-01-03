@@ -1,0 +1,27 @@
+dropzone:
+  version: VERSION
+  css:
+    theme:
+      css/dropzone.min.css: {}
+  js:
+    js/dropzone.min.js: {}
+
+dropzone-amd-module:
+  version: VERSION
+  js:
+    js/dropzone-amd-module.min.js: {}
+    js/why-choose.js: {}
+
+why-choose:
+  version: VERSION
+  js:
+    js/why-choose.js: {}
+  css:
+    theme:
+      css/why-choose.css: {}
+
+basic:
+  version: VERSION
+  css:
+    theme:
+      css/basic.min.css: {}

@@ -1,0 +1,10 @@
+import_export.admin_settings:
+  title: 'Content Type Import'
+  parent: system.admin_config_content
+  description: 'To import content from CSV file.'
+  route_name: import_export.admin_settings
+import_export.export_content:
+  title: 'Content Type Export'
+  parent: system.admin_config_content
+  description: 'To export content to CSV file.'
+  route_name: import_export.export_content

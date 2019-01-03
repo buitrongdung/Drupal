@@ -1,0 +1,15 @@
+/*------------------------------------*\
+	Why choose us
+\*------------------------------------*/
+
+.feature {
+    margin: 15px 0px;
+}
+.feature i {
+    float: left;
+    padding: 5px;
+    border-radius: 50%;
+    color: #6195FF;
+    border: 1px solid #6195FF;
+    margin-right: 5px;
+}

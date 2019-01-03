@@ -1,0 +1,112 @@
+{% extends "block.html.twig" %}
+
+{% set attributes = attributes.addClass('price-block') %}
+{% block content %}
+    <!-- Pricing -->
+<div id="pricing" class="section md-padding">
+
+    <!-- Container -->
+    <div class="container">
+
+        <!-- Row -->
+        <div class="row">
+
+            <!-- Section header -->
+            <div class="section-header text-center">
+                <h2 class="title">{{ 'Pricing Table'|t }}</h2>
+            </div>
+            <!-- /Section header -->
+            {% if cate_price %}
+                    {% for price in cate_price %}
+
+                        <!-- pricing -->
+                        <div class="col-sm-4">
+                            <div class="pricing">
+                                <div class="price-head">
+                                    <span class="price-title">{{ 'Basic plan'|t }}</span>
+                                    <div class="price">
+                                        <h3>${{ price.basic.price }}<span class="duration">/ {{ price.basic.time }}</span></h3>
+                                    </div>
+                                </div>
+                                <ul class="price-content">
+                                    <li>
+                                        <p>{{ price.basic.disk}}{{ price.basic.size|upper }} {{ 'Disk Space'|t }}</p>
+                                    </li>
+                                    <li>
+                                        <p>{{ price.basic.email}}</p>
+                                    </li>
+                                    <li>
+                                        <p>{{ price.basic.support}}</p>
+                                    </li>
+                                </ul>
+                                <div class="price-btn">
+                                    <button class="outline-btn">Purchase now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /pricing -->
+                        <!-- pricing -->
+                        <div class="col-sm-4">
+                            <div class="pricing">
+                                <div class="price-head">
+                                    <span class="price-title">{{ 'Silver plan'|t }}</span>
+                                    <div class="price">
+                                        <h3>${{ price.silver.price }}<span class="duration">/ {{ price.silver.time }}</span></h3>
+                                    </div>
+                                </div>
+                                <ul class="price-content">
+                                    <li>
+                                        <p>{{ price.silver.disk}}{{ price.silver.size|upper }} {{ 'Disk Space'|t }}</p>
+                                    </li>
+                                    <li>
+                                        <p>{{ price.silver.email}}</p>
+                                    </li>
+                                    <li>
+                                        <p>{{ price.silver.support}}</p>
+                                    </li>
+                                </ul>
+                                <div class="price-btn">
+                                    <button class="outline-btn">Purchase now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /pricing -->
+                        <!-- pricing -->
+                        <div class="col-sm-4">
+                            <div class="pricing">
+                                <div class="price-head">
+                                    <span class="price-title">{{ 'Gold plan'|t }}</span>
+                                    <div class="price">
+                                        <h3>${{ price.gold.price }}<span class="duration">/ {{ price.gold.time }}</span></h3>
+                                    </div>
+                                </div>
+                                <ul class="price-content">
+                                    <li>
+                                        <p>{{ price.gold.disk}}{{ price.gold.size|upper }} {{ 'Disk Space'|t }}</p>
+                                    </li>
+                                    <li>
+                                        <p>{{ price.gold.email}}</p>
+                                    </li>
+                                    <li>
+                                        <p>{{ price.gold.support}}</p>
+                                    </li>
+                                </ul>
+                                <div class="price-btn">
+                                    <button class="outline-btn">Purchase now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /pricing -->
+                    {% endfor %}
+
+            {% endif %}
+
+        </div>
+        <!-- Row -->
+
+    </div>
+    <!-- /Container -->
+
+</div>
+<!-- /Pricing -->
+{% endblock %}

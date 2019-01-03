@@ -1,0 +1,33 @@
+<?php
+function contact_block_theme()
+{
+    return [
+        'block__contact_block' => [
+            'render element' => 'form',
+        ],
+    ];
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block templates.
+ */
+function contact_block_preprocess_block(&$variables)
+{
+    $variables['form'] = '';
+    if ($variables['content']['form']['#access'] && $variables['content']['form']['#markup']) {
+        $variables['form'] = $variables['content']['form']['#markup'];
+    }
+    $variables['contact_inf'] = '';
+    if ($variables['content']['contact_inf']['#access'] && $variables['content']['contact_inf']['#markup']) {
+        $variables['contact_inf'] = $variables['content']['contact_inf']['#markup'];
+    }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block templates.
+ */
+function contact_block_preprocess_block__contact_block(&$variables)
+{
+    $variables['#attached']['library'] = 'contact_block/contact';
+}
+

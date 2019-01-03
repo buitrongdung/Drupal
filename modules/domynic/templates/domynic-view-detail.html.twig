@@ -1,0 +1,23 @@
+<h1>domynic detail</h1>
+{% if node %}
+<div class="views-element-container contextual-region">
+    <div class="view-content">
+        <div class="views-view-grid horizontal cols-4 clearfix">
+            <div class="views-row clearfix row-1">
+                <div class="views-col col-1" style="width: 50%; float: left;">
+                    <div class="views-field views-field-field-image">
+                        <div class="field-content">
+                            <img src="{{ node.image }}" width="150" height="150" alt="{{ node.alt }}" typeof="foaf:Image" class="image-style-thumbnail">
+                        </div>
+                    </div>
+                    <div class="views-field views-field-title"><span class="field-content">{{ 'Name'|t }}: {{ node.name }}</span></div>
+                    <div class="views-field views-field-field-birth"><div class="field-content">{{ 'Birth'|t }}: {{ node.birth }}</div></div>
+                    <div class="views-field views-field-field-birth"><div class="field-content">{{ 'Gender'|t }}: {{ node.gender }}</div></div>
+                    <div class="views-field views-field-field-birth"><div class="field-content">{{ 'Hobies'|t }}: {{ node.hobies }}</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endif %}

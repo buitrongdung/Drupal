@@ -1,0 +1,5 @@
+number:
+  version: VERSION
+  css:
+    theme:
+      css/number.css: {}

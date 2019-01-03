@@ -1,0 +1,26 @@
+<?php
+function person_block_theme()
+{
+    return array_merge(drupal_common_theme(), [
+        'block__person_block' => [
+            'render element' => 'elements',
+            'base hook' => 'block',
+        ],
+    ]);
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block templates.
+ */
+function person_block_preprocess_block(&$variables)
+{
+    $variables['list_content'] = '';
+    if ($variables['content']['list_content']['#access'] && $variables['content']['list_content']['#markup']) {
+        $variables['list_content'] = $variables['content']['list_content']['#markup'];
+    }
+}
+
+function person_block_preprocess_block__person_block(&$variables)
+{
+    $variables['#attached']['library'] = 'person_block/team';
+}

@@ -1,0 +1,17 @@
+home_content.site:
+  type: config_object
+  label: 'Home content information'
+  mapping:
+    uuid:
+      type: uuid
+      label: 'Site UUID'
+    title:
+      type: label
+      label: 'Title Article'
+    summary:
+      type: label
+      label: 'Summary Article'
+    url:
+      type: path
+      label: 'Link to article'
+

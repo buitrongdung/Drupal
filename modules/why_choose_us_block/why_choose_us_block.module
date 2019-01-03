@@ -1,0 +1,40 @@
+<?php
+function why_choose_us_block_theme()
+{
+    return array_merge(drupal_common_theme(), [
+        'block__service_block' => [
+            'render element' => 'elements',
+            'base hook' => 'block',
+        ],
+    ]);
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block templates.
+ */
+function why_choose_us_block_preprocess_block(&$variables)
+{
+    $variables['images'] = '';
+    if ($variables['content']['image']['#access'] && $variables['content']['image']['#markup']) {
+        $variables['images'] = $variables['content']['image']['#markup'];
+    }
+
+    $variables['text'] = '';
+    if ($variables['content']['text']['#access'] && $variables['content']['text']['#markup']) {
+        $variables['text'] = $variables['content']['text']['#markup'];
+    }
+
+    $variables['items'] = '';
+    if ($variables['content']['items']['#access'] && $variables['content']['items']['#markup']) {
+        $variables['items'] = $variables['content']['items']['#markup'];
+    }
+}
+
+function why_choose_us_block_preprocess_block__why_choose_us_block(&$variables)
+{
+    $variables['#attached']['library'][] = 'why_choose_us_block/dropzone';
+    $variables['#attached']['library'][] = 'why_choose_us_block/dropzone-amd-module';
+    $variables['#attached']['library'][] = 'why_choose_us_block/why-choose';
+    $variables['#attached']['library'][] = 'why_choose_us_block/basic';
+}
+

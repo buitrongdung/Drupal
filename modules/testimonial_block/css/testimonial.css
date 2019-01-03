@@ -1,0 +1,56 @@
+
+/*------------------------------------*\
+	Testimonial
+\*------------------------------------*/
+#testimonial .bg-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+#testimonial .bg-img .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .8;
+    background: #1C1D21;
+}
+.testimonial {
+    margin: 15px 0px;
+}
+
+.testimonial-meta {
+    position: relative;
+    padding-left: 90px;
+    height: 70px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+
+.testimonial img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 70px !important;
+    height: 70px !important;
+    border-radius: 50%;
+}
+
+.testimonial h3 {
+    margin-bottom: 5px;
+}
+
+.testimonial span {
+    font-size: 14px;
+    color: #6195FF;
+    text-transform: uppercase;
+}

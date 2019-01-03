@@ -1,0 +1,5 @@
+name: Nutrition Information
+type: module
+description: 'Defines a nutrition information field type based on the Microdata spec at http://schema.org/NutritionInformation'
+package: Fields
+core: '8.x'

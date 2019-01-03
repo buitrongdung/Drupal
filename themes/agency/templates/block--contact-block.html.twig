@@ -1,0 +1,71 @@
+{% extends "block.html.twig" %}
+
+{% set attributes = attributes.addClass('contact-form') %}
+
+{% block content %}
+
+    <!-- Contact -->
+<div id="contact" class="section md-padding">
+
+    <!-- Container -->
+    <div class="container">
+
+        <!-- Row -->
+        <div class="row">
+
+            <!-- Section-header -->
+            <div class="section-header text-center">
+                <h2 class="title">{{  'Get in touch'|t }}</h2>
+            </div>
+            <!-- /Section-header -->
+
+            <!-- contact -->
+            <div class="col-sm-4">
+                <div class="contact">
+                    <i class="fa fa-phone"></i>
+                    <h3>{{ 'Phone'|t }}</h3>
+                    <p>{{ contact_inf.phone }}</p>
+                </div>
+            </div>
+            <!-- /contact -->
+
+            <!-- contact -->
+            <div class="col-sm-4">
+                <div class="contact">
+                    <i class="fa fa-envelope"></i>
+                    <h3>{{ 'Email'|t }}</h3>
+                    <p>{{ contact_inf.email }}</p>
+                </div>
+            </div>
+            <!-- /contact -->
+
+            <!-- contact -->
+            <div class="col-sm-4">
+                <div class="contact">
+                    <i class="fa fa-map-marker"></i>
+                    <h3>{{ 'Address'|t }}</h3>
+                    <p>{{ contact_inf.address }}</p>
+                </div>
+            </div>
+            <!-- /contact -->
+            <!-- contact form -->
+            <div class="col-md-8 col-md-offset-2">
+                <form {{ attributes }}">
+                    {{ form.name }}
+                    {{ form.email }}
+                    {{ form.subject }}
+                    {{ form.message }}
+                    {{ form.actions.submit }}
+                </form>
+            </div>
+            <!-- /contact form -->
+
+        </div>
+        <!-- /Row -->
+
+    </div>
+    <!-- /Container -->
+
+</div>
+<!-- /Contact -->
+{% endblock %}

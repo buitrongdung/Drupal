@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hobies
+    - node.type.domynic
+  module:
+    - text
+id: node.domynic.field_hobies
+field_name: field_hobies
+entity_type: node
+bundle: domynic
+label: Hobies
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,13 @@
+domynic.list:
+  path: '/domynic'
+  defaults:
+    _controller: '\Drupal\domynic\Controller\DomynicController::showListNode'
+  requirements:
+    _permission: 'access simple page'
+domynic.detail:
+  path: '/domynic/{node_slug}'
+  defaults:
+    _controller: '\Drupal\domynic\Controller\DomynicController::detailNode'
+  requirements:
+    _permission: 'access simple page'
+

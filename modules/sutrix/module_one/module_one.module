@@ -1,0 +1,10 @@
+<?php
+
+function module_one_theme()
+{
+    return array(
+        'module_one' => array(
+            'variables' => array('form' => [], 'list_content' => [])
+        ),
+    );
+}

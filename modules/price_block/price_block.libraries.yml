@@ -1,0 +1,10 @@
+price:
+  version: VERSION
+  css:
+    theme:
+      css/price.css: {}
+manage:
+  version: VERSION
+  css:
+    theme:
+      css/manage.css: {}

@@ -1,0 +1,27 @@
+{% extends "block.html.twig" %}
+
+{% set attributes = attributes.addClass('home-content') %}
+{% block content %}
+    <!-- home wrapper -->
+    <div class="home-wrapper">
+        <div class="container">
+            <div class="row">
+
+                <!-- home content -->
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="home-content">
+                        {% if site_title or site_summary or site_url %}
+                            <h1 class="white-text">{{ site_title }}</h1>
+                            <p class="white-text">{{ site_summary }}</p>
+                            <button class="white-btn">{{ 'Get Started!'| t }}</button>
+                            <a href="{{ site_url }}"><button class="main-btn">{{ 'Learn more'|t }}</button></a>
+                        {% endif %}
+                    </div>
+                </div>
+                <!-- /home content -->
+
+            </div>
+        </div>
+    </div>
+    <!-- /home wrapper -->
+{% endblock %}

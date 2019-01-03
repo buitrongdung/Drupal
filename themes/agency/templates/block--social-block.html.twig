@@ -1,0 +1,14 @@
+{% extends "block.html.twig" %}
+
+{% set attributes = attributes.addClass('social-block') %}
+{% block content %}
+    <!-- footer follow -->
+    {% if social_list %}
+        <ul class="footer-follow">
+            {% for key, social in social_list %}
+                <li><a href="{{ social }}"><i class="fa fa-{{ key }}"></i></a></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <!-- /footer follow -->
+{% endblock %}

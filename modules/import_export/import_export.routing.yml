@@ -1,0 +1,14 @@
+import_export.admin_settings:
+  path: '/admin/config/content/import-content'
+  defaults:
+    _form: 'Drupal\import_export\Form\ContentImportForm'
+    _title: 'Import Content'
+  requirements:
+    _permission: 'access administration pages'
+import_export.export_content:
+  path: '/admin/config/content/export-content'
+  defaults:
+    _form: 'Drupal\import_export\Form\ContentExportForm'
+    _title: 'Export Content'
+  requirements:
+    _permission: 'access administration pages'

@@ -1,0 +1,6 @@
+domynic:
+  version: VERSION
+  js:
+    js/domynic.js: {}
+  dependencies:
+    - core/jquery

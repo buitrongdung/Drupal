@@ -1,0 +1,12 @@
+name: Taxonomy Import
+description: Taxonomy Import
+package: 'Vertex'
+type: module
+# core: 8.x
+configure: taxonomy_import.settings
+
+# Information added by Drupal.org packaging script on 2017-12-20
+version: '8.x-1.0+8-dev'
+core: '8.x'
+project: 'taxonomy_import'
+datestamp: 1513765386

@@ -1,0 +1,7 @@
+name: Filter Node Block
+description: 'Custom Filter Node Block'
+type: module
+core: 8.x
+package: Custom
+dependencies:
+  - block

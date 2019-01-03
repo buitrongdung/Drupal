@@ -1,0 +1,7 @@
+name: Blog Block
+description: 'Custom blog block'
+type: module
+core: 8.x
+package: Custom
+dependencies:
+  - block

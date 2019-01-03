@@ -1,0 +1,21 @@
+<?php
+
+function agency_preprocess_html(&$variables) {
+
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for maintenance-page.html.twig.
+ */
+function agency_preprocess_page(&$variables) {
+  $variables['#attached']['library'][] = 'agency/global-styling';
+  $variables['#attached']['library'][] = 'agency/global-scripts';
+}
+
+function agency_preprocess_block(&$variables)
+{
+    if ($variables['plugin_id'] == 'home_content') {
+        $variables['attributes']['class'][] = 'clearfix';
+      }
+}
+

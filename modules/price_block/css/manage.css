@@ -1,0 +1,9 @@
+.form-item-settings-basic-price,.form-item-settings-basic-currency, .form-item-settings-basic-time, .form-item-settings-basic-disk, .form-item-settings-basic-size {
+    display: inline;
+}
+.form-item-settings-silver-price,.form-item-settings-silver-currency, .form-item-settings-silver-time, .form-item-settings-silver-disk, .form-item-settings-silver-size {
+    display: inline;
+}
+.form-item-settings-gold-price,.form-item-settings-gold-currency, .form-item-settings-gold-time, .form-item-settings-gold-disk, .form-item-settings-gold-size {
+    display: inline;
+}

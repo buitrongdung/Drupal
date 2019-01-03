@@ -1,0 +1,26 @@
+<?php
+function service_block_theme()
+{
+    return array_merge(drupal_common_theme(), [
+        'block__service_block' => [
+            'render element' => 'elements',
+            'base hook' => 'block',
+        ],
+    ]);
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block templates.
+ */
+function service_block_preprocess_block(&$variables)
+{
+    $variables['list_service'] = '';
+    if ($variables['content']['list_service']['#access'] && $variables['content']['list_service']['#markup']) {
+        $variables['list_service'] = $variables['content']['list_service']['#markup'];
+    }
+}
+
+function service_block_preprocess_block__service_block(&$variables)
+{
+    $variables['#attached']['library'] = 'service_block/service';
+}

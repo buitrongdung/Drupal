@@ -1,0 +1,27 @@
+<?php
+function copyright_block_theme()
+{
+    return array_merge(drupal_common_theme(), [
+        'block__copyright_block' => [
+            'render element' => 'elements',
+            'base hook' => 'block',
+        ],
+    ]);
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block templates.
+ */
+function copyright_block_preprocess_block(&$variables)
+{
+    $variables['copy_right_text'] = '';
+    if ($variables['content']['copy_right_text']['#access'] && $variables['content']['copy_right_text']['#markup']) {
+        $variables['copy_right_text'] = $variables['content']['copy_right_text']['#markup'];
+    }
+}
+
+function copyright_block_preprocess_block__copyright_block(&$variables)
+{
+    $variables['#attached']['library'][] = 'copyright_block/copyright_block';
+
+}

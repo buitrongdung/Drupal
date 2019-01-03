@@ -1,0 +1,5 @@
+service:
+  version: VERSION
+  css:
+    theme:
+      css/service.css: {}

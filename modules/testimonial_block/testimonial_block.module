@@ -1,0 +1,32 @@
+<?php
+function testimonial_block_theme()
+{
+    return array_merge(drupal_common_theme(), [
+        'block__testimonial_block' => [
+            'render element' => 'elements',
+            'base hook' => 'block',
+        ],
+    ]);
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block templates.
+ */
+function testimonial_block_preprocess_block(&$variables)
+{
+    $variables['persons'] = '';
+    if ($variables['content']['persons']['#access'] && $variables['content']['persons']['#markup']) {
+        $variables['persons'] = $variables['content']['persons']['#markup'];
+    }
+
+    $variables['bg_image_url'] = '';
+    if ($variables['content']['bg_image_url']['#access'] && $variables['content']['bg_image_url']['#markup']) {
+        $variables['bg_image_url'] = $variables['content']['bg_image_url']['#markup'];
+    }
+}
+
+function testimonial_block_preprocess_block__testimonial_block(&$variables)
+{
+    $variables['#attached']['library'][] = 'testimonial_block/testimonial';
+}
+

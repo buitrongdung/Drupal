@@ -1,0 +1,26 @@
+<?php
+function team_block_theme()
+{
+    return array_merge(drupal_common_theme(), [
+        'block__team_block' => [
+            'render element' => 'elements',
+            'base hook' => 'block',
+        ],
+    ]);
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block templates.
+ */
+function team_block_preprocess_block(&$variables)
+{
+    $variables['teams'] = '';
+    if ($variables['content']['teams']['#access'] && $variables['content']['teams']['#markup']) {
+        $variables['teams'] = $variables['content']['teams']['#markup'];
+    }
+}
+
+function team_block_preprocess_block__team_block(&$variables)
+{
+    $variables['#attached']['library'] = 'team_block/team';
+}

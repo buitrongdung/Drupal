@@ -1,0 +1,5 @@
+copyright_block:
+  version: VERSION
+  css:
+    theme:
+      css/copyright_block.css: {}

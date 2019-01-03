@@ -1,0 +1,6 @@
+name: Import/Export Content Type
+core: 8.x
+version: 8.x-1.0
+type: module
+package: Custom
+description: Custom import/export content type

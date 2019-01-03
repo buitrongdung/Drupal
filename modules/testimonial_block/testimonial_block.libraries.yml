@@ -1,0 +1,7 @@
+testimonial:
+  version: VERSION
+  js:
+    js/testimonial.js: {}
+  css:
+    theme:
+      css/testimonial.css: {}

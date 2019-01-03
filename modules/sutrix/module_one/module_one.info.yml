@@ -1,0 +1,6 @@
+name: Module One
+core: 8.x
+version: 8.x-1.0
+type: module
+package: Custom
+description: Custom module one

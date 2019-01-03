@@ -1,0 +1,26 @@
+<?php
+function price_block_theme()
+{
+    return array_merge(drupal_common_theme(), [
+        'block__price_block' => [
+            'render element' => 'elements',
+            'base hook' => 'block',
+        ],
+    ]);
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block templates.
+ */
+function price_block_preprocess_block(&$variables)
+{
+    $variables['cate_price'] = '';
+    if ($variables['content']['cate_price']['#access'] && $variables['content']['cate_price']['#markup']) {
+        $variables['cate_price'] = $variables['content']['cate_price']['#markup'];
+    }
+}
+
+function price_block_preprocess_block__price_block(&$variables)
+{
+    $variables['#attached']['library'] = 'price_block/price';
+}

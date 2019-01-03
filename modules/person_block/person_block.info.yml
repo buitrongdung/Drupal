@@ -1,0 +1,7 @@
+name: Person Block
+description: 'Custom person block'
+type: module
+core: 8.x
+package: Custom
+dependencies:
+  - block

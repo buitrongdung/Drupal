@@ -1,0 +1,12 @@
+{% extends "block.html.twig" %}
+
+{% set attributes = attributes.addClass('copyright-block') %}
+{% block content %}
+    <!-- footer copyright -->
+    {% if copy_right_text %}
+    <div class="footer-copyright">
+        <p>{{ copy_right_text.text.value }}</p>
+    </div>
+    {% endif %}
+    <!-- /footer copyright -->
+{% endblock %}

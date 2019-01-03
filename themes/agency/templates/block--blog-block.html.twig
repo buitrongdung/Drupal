@@ -1,0 +1,73 @@
+{% extends "block.html.twig" %}
+
+{% set attributes = attributes.addClass('blog_block') %}
+{% block content %}
+    <!-- Blog -->
+<div id="blog" class="section md-padding bg-grey">
+
+    <!-- Container -->
+    <div class="container">
+
+        <!-- Row -->
+        <div class="row">
+
+            <!-- Section header -->
+            <div class="section-header text-center">
+                <h2 class="title"> {{ 'Recents news'|t }}</h2>
+            </div>
+            <!-- /Section header -->
+            {% if article_limit == 3 %}
+                {% for article in article_inf %}
+                    <!-- blog -->
+                    <div class="col-md-4">
+                        <div class="blog">
+                            <div class="blog-img">
+                                <img class="img-responsive" src="{{ article.image }}" alt="{{ article.alt }}">
+                            </div>
+                            <div class="blog-content">
+                                <ul class="blog-meta">
+                                    <li><i class="fa fa-user"></i>{{ article.user_created }}</li>
+                                    <li><i class="fa fa-clock-o"></i>{{ article.date_created }}</li>
+                                    <li><i class="fa fa-comments"></i>{{ article.comment }}</li>
+                                </ul>
+                                <h3>{{ article.title }}</h3>
+                                <p>{{ article.summary }}</p>
+                                <a href="{{ article.url }}">{{ 'Read more'|t }}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /blog -->
+                {% endfor %}
+            {% endif %}
+            {% if article_limit == 2 %}
+                {% for article in article_inf %}
+                    <!-- blog -->
+                    <div class="col-md-6">
+                        <div class="blog">
+                            <div class="blog-img">
+                                <img class="img-responsive" src="{{ article.image }}" alt="{{ article.alt }}">
+                            </div>
+                            <div class="blog-content">
+                                <ul class="blog-meta">
+                                    <li><i class="fa fa-user"></i>{{ article.user_created }}</li>
+                                    <li><i class="fa fa-clock-o"></i>{{ article.date_created }}</li>
+                                    <li><i class="fa fa-comments"></i>{{ article.comment }}</li>
+                                </ul>
+                                <h3>{{ article.title }}</h3>
+                                <p>{{ article.summary }}</p>
+                                <a href="{{ article.url }}">{{ 'Read more'|t }}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /blog -->
+                {% endfor %}
+            {% endif %}
+        </div>
+        <!-- /Row -->
+
+    </div>
+    <!-- /Container -->
+
+</div>
+<!-- /Blog -->
+{% endblock %}

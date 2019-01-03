@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gender
+    - node.type.domynic
+  module:
+    - options
+id: node.domynic.field_gender
+field_name: field_gender
+entity_type: node
+bundle: domynic
+label: Gender
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: Male
+default_value_callback: ''
+settings: {  }
+field_type: list_string

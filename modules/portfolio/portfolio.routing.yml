@@ -1,0 +1,7 @@
+portfolio.blockForm:
+  path: '/admin/structure/block/manage/portfolioblock?destination=/admin/structure/block'
+  defaults:
+    _form: 'Drupal\portfolio\Plugin\Block\PortfolioBlock'
+    _title: 'Ajax Portfolio'
+  requirements:
+    _permission: 'access administration pages'

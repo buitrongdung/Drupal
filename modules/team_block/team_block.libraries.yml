@@ -1,0 +1,5 @@
+team:
+  version: VERSION
+  css:
+    theme:
+      css/team.css: {}

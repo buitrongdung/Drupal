@@ -1,0 +1,18 @@
+{% if form %}
+    {{ form }}
+{% endif %}
+{{ attach_library('classy/node') }}
+{% if list_content %}
+    {% for content in list_content %}
+        <article>
+            <header>
+                <h2>
+                    <a href="{{ content.url }}" ref="bookmark">{{ content.title }}</a>
+                </h2>
+            </header>
+            <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
+                {{ content.summary }}
+            </div>
+        </article>
+    {% endfor %}
+{% endif %}
